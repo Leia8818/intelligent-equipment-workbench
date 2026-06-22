@@ -22,7 +22,6 @@ https://leia8818.github.io/intelligent-equipment-workbench/demo-qr.html
 - 知识中心：`knowledge/index.html`
 - 未来探索：`future/index.html`
 - 内容录入规范：`guide/index.html`
-- 述职展示模式：`presentation/index.html`
 - 扫码入口页：`demo-qr.html`
 
 ## 内容真实机制

@@ -1,6 +1,102 @@
-# 智能装备研究院工作台静态门户
+# 智能装备研究院工作台
 
-这是一个纯静态的智能装备研究院工作台门户，可展示部门介绍、资讯发布、共享文档、项目介绍、平台能力与合作入口。可部署到 Vercel、Netlify、GitHub Pages、阿里云 OSS、腾讯云 COS 等静态托管平台。
+这是一个部署在 GitHub Pages 上的静态工作台，用于集中展示智能装备研究院的知识资产、项目资产、AI能力资产和后续建设方向。
+
+线上地址：
+
+```text
+https://leia8818.github.io/intelligent-equipment-workbench/
+```
+
+扫码页：
+
+```text
+https://leia8818.github.io/intelligent-equipment-workbench/demo-qr.html
+```
+
+## V1.0 信息结构
+
+- 研究院概览：`overview/index.html`
+- 重点项目：`projects/index.html`
+- AI赋能中心：`ai/index.html`
+- 知识中心：`knowledge/index.html`
+- 未来探索：`future/index.html`
+- 内容录入规范：`guide/index.html`
+- 述职展示模式：`presentation/index.html`
+- 扫码入口页：`demo-qr.html`
+
+## 内容真实机制
+
+所有项目详情、知识资料、案例和模板都应保留以下字段：
+
+- 资料来源
+- 更新时间
+- 责任人
+- 可信度
+
+字段为空时显示“待补充”，不要隐藏。
+
+可信度分级：
+
+- A级：原始数据 / 正式文件
+- B级：内部整理资料
+- C级：公开网络资料
+- D级：AI辅助生成内容，待人工核实
+
+## 后续提供内容的格式
+
+### 最新消息
+
+```text
+标题：
+日期：
+正文：
+资料来源：
+附件：
+```
+
+### 研发资讯
+
+```text
+标题：
+分类：
+摘要：
+正文：
+资料来源：
+可信度：
+```
+
+### 共享文档
+
+```text
+文档名称：
+文档分类：
+文档说明：
+网盘链接：
+资料来源：
+更新时间：
+```
+
+### 项目介绍
+
+```text
+项目名称：
+项目背景：
+当前进展：
+阶段成果：
+图片：
+资料来源：
+更新时间：
+```
+
+### 首页文案
+
+```text
+标题：
+副标题：
+部门介绍：
+联系方式：
+```
 
 ## 本地预览
 
@@ -14,53 +110,14 @@ python3 -m http.server 4173
 http://127.0.0.1:4173/
 ```
 
-## 内容替换
+## GitHub Pages 发布
 
-- 首页主标题：`index.html` 中的 `hero-title`
-- 工作台入口：`#workspace`
-- 部门最新消息：`news/index.html`
-- 研发资讯：`research/index.html`
-- 共享文档：`#documents`
-- 项目介绍：`#projects`
-- 研究方向：`#fields`
-- 平台能力：`#platform`
-- 联系方式：`#contact`
-- 首屏图片：替换 `assets/hero-research.jpg`
+修改完成后：
 
-## 后续升级方向
+```bash
+git add .
+git commit -m "Update workbench content"
+git push
+```
 
-- 资讯发布：接入 CMS、Markdown 文件目录或数据库。
-- 共享文档：接入对象存储、网盘链接、权限系统或统一登录。
-- 项目介绍：接入项目库，支持分类、检索、详情页和归档。
-- 数据看板：增加访问统计、项目进度和资料下载统计。
-
-## 发布新内容
-
-1. 复制 `templates/content-template.html` 到 `news/` 或 `research/` 目录。
-2. 将文件名改成英文短横线格式，例如 `new-equipment-test.html`。
-3. 修改标题、日期、摘要和正文。
-4. 在对应栏目列表页 `news/index.html` 或 `research/index.html` 中新增一条入口。
-5. 如需在首页展示，也同步修改 `index.html` 中的最新消息或研发资讯卡片。
-
-## 云端部署
-
-### Vercel
-
-1. 新建项目并导入本目录。
-2. Framework Preset 选择 `Other`。
-3. Build Command 留空。
-4. Output Directory 填 `.`。
-5. 部署后会得到一个公网 URL。
-
-### Netlify
-
-1. 新建站点并上传本目录。
-2. Build command 留空。
-3. Publish directory 填 `.`。
-4. 部署后会得到一个公网 URL。
-
-### GitHub Pages
-
-1. 把本目录提交到 GitHub 仓库。
-2. 在仓库 Settings > Pages 中选择部署分支。
-3. Source 选择仓库根目录。
+GitHub Pages 会自动从 `main` 分支根目录发布。
